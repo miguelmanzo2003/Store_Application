@@ -1,0 +1,9 @@
+# ninja log v5
+0	1436	1733977109573070645	CMakeFiles/Store_Application_Folder.dir/Aisle.cpp.o	4f94a222771b71e8
+1	1447	1733977109578518699	CMakeFiles/Store_Application_Folder.dir/Item.cpp.o	89d47496a6056e5b
+0	1450	1733977109588021898	CMakeFiles/Store_Application_Folder.dir/guest.cpp.o	1d61289ee477cd3f
+0	1452	1733977109588568503	CMakeFiles/Store_Application_Folder.dir/food.cpp.o	2cf5baef82294168
+0	1460	1733977109599422237	CMakeFiles/Store_Application_Folder.dir/drink.cpp.o	9d27446e4a095242
+1	1591	1733977109730750047	CMakeFiles/Store_Application_Folder.dir/main.cpp.o	d1beaf97b97c78d
+1444	2127	1733977110268985236	CMakeFiles/Store_Application_Folder.dir/store.cpp.o	c2193ff73cb47a63
+2127	2174	1733977110316902093	Store_Application_Folder	25c28d93d9ae7e22
