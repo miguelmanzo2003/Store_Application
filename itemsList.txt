@@ -1,0 +1,182 @@
+food
+Apples: One Dozen (12)
+100
+50
+1.80
+924
+December 24, 2024
+food
+Banana: Pack of 5
+100
+49
+1.75
+525
+December 24, 2024
+food
+Carrots: Pack of 10
+100
+48
+2.00
+250
+December 31, 2024
+food
+Tomatoes: Pack of 10
+100
+47
+2.00
+220
+December 24, 2024
+food
+Oranges: Pack of 10
+100
+46
+7.50
+620
+December 24, 2024
+drink
+Budweiser
+50
+45
+2.50
+1
+1
+12
+drink
+Coca-Cola
+50
+44
+1.25
+1
+0
+12
+drink
+Red Bull
+50
+43
+2.50
+1
+0
+8
+drink
+Tropicana Orange Juice
+50
+42
+2.00
+1
+0
+12
+drink
+Bottle of water
+50
+41
+1.50
+1
+0
+20
+food
+Bagel
+20
+40
+1.00
+250
+December 17, 2024
+food
+Brioche Loaf
+20
+39
+4.50
+150
+December 17, 2024
+food
+Croissant
+20
+38
+2.50
+270
+December 15, 2024
+food
+Muffin
+20
+37
+2.00
+400
+December 15, 2024
+food
+Sourdough Bread
+20
+36
+5.00
+120
+December 17, 2024
+food
+Baked Beans
+40
+35
+1.50
+200
+December 15, 2025
+food
+Canned Corn
+40
+34
+1.00
+130
+December 15, 2025
+food
+Canned Tuna
+40
+33
+1.20
+100
+December 15, 2025
+food
+Tomato Soup
+40
+32
+1.75
+140
+December 15, 2025
+food
+Vegetable Soup
+40
+31
+1.50
+150
+December 15, 2025
+food
+Cheddar Cheese
+20
+30
+3.50
+110
+January 15, 2025
+food
+Eggs: One dozen (12)
+20
+29
+30.00
+840
+January 7, 2025
+drink
+Milk
+10
+28
+4.00
+0
+0
+128
+food
+Sliced Deli Turkey
+20
+27
+4.00
+60
+December 17, 2024
+drink
+Yogurt
+20
+26
+1.25
+0
+0
+6
