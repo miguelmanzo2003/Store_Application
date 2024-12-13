@@ -14,7 +14,7 @@ store::store(string storeName, int numOfAisle) {
     this->numOfAisle = numOfAisle;
 
     //this code will be deleted later
-    this->apples = new food("Apples: One Dozen (12)", 100, 50, 1.80, 924, "December 24, 2024");
+
     this->banana = new food("Banana: Pack of 5", 100, 49, 1.75, 525, "December 24, 2024");
     this->orange = new food("Oranges: Pack of 10", 100, 46, 7.50, 620, "December 24, 2024");
     this->carrot = new food("Carrots: Pack of 10", 100, 48, 2.00, 250, "December 31, 2024");
@@ -22,20 +22,30 @@ store::store(string storeName, int numOfAisle) {
     this->water = new drink("Bottle of water", 50, 40, 1.50, true, false, 20);
     // ---------------------------------------------------------------------------------------
 
+    this->item1 = new Node(new food("Apples: One Dozen (12)", 100, 50, 90.00, 924, "December 24, 2024"));
+    this->item2 = new Node(banana);
+    this->item3 = new Node(orange);
+    this->item4 = new Node(carrot);
+    this->item5 = new Node(tomato);
+    this->item6 = new Node(water);
+
     initializeAisles();
 }
 
 void store::initializeAisles(){
     //this will also be replaced
+
+
     aisleList.push_back(produce);
     aisleList.push_back(drinks);
 
-    aisleList.at(0).pushBack(apples);
-    aisleList.at(0).pushBack(banana);
-    aisleList.at(0).pushBack(carrot);
-    aisleList.at(0).pushBack(tomato);
-    aisleList.at(0).pushBack(orange);
-    aisleList.at(1).pushBack(water);
+
+    aisleList.at(0).getList().pushBack(item1);
+    aisleList.at(0).getList().pushBack(item2);
+    aisleList.at(0).getList().pushBack(item3);
+    aisleList.at(0).getList().pushBack(item4);
+    aisleList.at(0).getList().pushBack(item5);
+    aisleList.at(1).getList().pushBack(item6);
     //-------------------------------
 }
 
@@ -78,20 +88,26 @@ int store::getMenuChoice() {
             break;
         case REMOVE:
             int userID;
+
+            cout << "Please enter the ID of the item you want to remove:";
+
             cin >> userID;
+
+            cout << endl;
             user.removeItem(userID);
-            cout << "coming soon" << endl;
 
             break;
         case CHECKOUT:
 
-            cout << "coming soon" << endl;
+
+
+
 
             user.deleteUserCart();
 
 
-            produce.~Aisle();
-            drinks.~Aisle();
+            produce.deleteAisle();
+            drinks.deleteAisle();
 
             return 1;
     }
@@ -149,7 +165,7 @@ void store::enterAisleMenu() {
             cin >> userId;
             cout << endl;
 
-            user.addToCart(aisleList[currentAisle - 1], userId);
+            user.addToCart(aisleList.at(currentAisle - 1).getList(), userId);
 
 
             break;

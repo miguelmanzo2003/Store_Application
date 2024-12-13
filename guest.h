@@ -12,24 +12,28 @@ using namespace std;
 
 struct guest {
 private:
-	double userBudget;
-	double total;
+    double userBudget;
+    double total;
 
-	Aisle userCart = Aisle();
+    LinkedList userCart = LinkedList();
 public:
-	guest();
+    guest();
 
-	double generateBudget();
+    double generateBudget();
 
-	void addToCart(Aisle& ailseList, int idNum);
+    void addToCart(LinkedList& ailseList, int idNum);
 
-	void removeItem(int idNum);
+    void removeItem(int idNum);
 
-	double getUserBudget()const;
+    double getUserBudget()const;
 
-	void printItems();
+    void printItems();
 
-	void deleteUserCart();
+    void deleteUserCart();
+
+
+
+    double getTotal() const;
 
 };
 

@@ -43,6 +43,13 @@ private:
 //drinks items
     drink* water;
 
+    Node* item1;
+    Node* item2;
+    Node* item3;
+    Node* item4;
+    Node* item5;
+    Node* item6;
+
     void initializeAisles();
 
 public:
@@ -60,6 +67,7 @@ public:
     void printAisleList();
 
 
+
 };
 
-#endif
+#endif 

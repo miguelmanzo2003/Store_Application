@@ -1,3 +1,4 @@
+
 #pragma once
 #ifndef ITEM_H
 #define ITEM_H
@@ -7,58 +8,47 @@ using namespace std;
 
 struct Item {
 private:
-	string itemName;
-	int inventory;
-	int idNum;
-	double itemPrice;
-	Item* prev;
-	Item* next;
+    string itemName;
+    int inventory;
+    int idNum;
+    double itemPrice;
 
 public:
-	
-	Item(string itemName, int inventory, int idNum, double itemPrice);
-	
-	Item(const Item& copy);
-	
-	//Display
-	virtual void displayItem() const = 0;
 
-	virtual Item* cloneItem() const = 0;
+    Item(string itemName, int inventory, int idNum, double itemPrice);
+
+    Item(const Item& copy);
+
+//Display
+    virtual void displayItem() const = 0;
+
+    virtual Item* cloneItem() const = 0;
 
 
-	//Getter and Setter methods
-	
-	// item name
-	string getWord()const; 
+//Getter and Setter methods
 
-	void setWord(string itemName); 
-	
-	// id num
-	int getIdNum()const; 
+// item name
+    string getWord()const;
 
-	void setIdNum(int idNum); 
-	
-	// inventory size
-	int getInventory()const; 
+    void setWord(string itemName);
 
-	void setInventory(int idNum);
+// id num
+    int getIdNum()const;
 
-	// item price
-	double getItemPrice()const; 
+    void setIdNum(int idNum);
 
-	void setItemPrice(double itemPrice);
+// inventory size
+    int getInventory()const;
 
-	//prev methods
-	void setPrev(Item* prevItem);
+    void setInventory(int idNum);
 
-	Item* getPrev() const;
+// item price
+    double getItemPrice()const;
 
-	//next methods
-	void setNext(Item* nextItem);
+    void setItemPrice(double itemPrice);
 
-	Item* getNext() const;
 
-	
+
 
 };
 

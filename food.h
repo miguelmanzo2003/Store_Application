@@ -9,19 +9,19 @@ using namespace std;
 
 struct food : public Item {
 private:
-	int calories;
-	string expiration;
+    int calories;
+    string expiration;
 
 public:
-	food(string itemName, int inventory, int idNum, double itemPrice, int calories, string expiration);
+    food(string itemName, int inventory, int idNum, double itemPrice, int calories, string expiration);
 
-	food(const food& foodCopy);
+    food(const food& foodCopy);
 
-	void displayItem() const override;
+    void displayItem() const override;
 
-	Item* cloneItem() const override;
-	
-	
+    Item* cloneItem() const override;
+
+
 };
 
 #endif 

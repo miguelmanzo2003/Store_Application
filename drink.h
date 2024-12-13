@@ -9,18 +9,18 @@ using namespace std;
 
 struct drink : public Item {
 private:
-	bool isRecyclable;
-	bool isAlcoholic;
-	int sizeOz;
+    bool isRecyclable;
+    bool isAlcoholic;
+    int sizeOz;
 
 public:
 
-	drink(string itemName, int inventory, int idNum, double itemPrice, bool isRecycable, bool isAlchoholic, int sizeOz);
+    drink(string itemName, int inventory, int idNum, double itemPrice, bool isRecycable, bool isAlchoholic, int sizeOz);
 
-	drink(const drink& drinkCopy);
+    drink(const drink& drinkCopy);
 
-	void displayItem() const override;
+    void displayItem() const override;
 
-	Item* cloneItem() const override;
+    Item* cloneItem() const override;
 };
 #endif 

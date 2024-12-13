@@ -18,4 +18,8 @@ add_executable(Store_Application_Folder
         Item.h
         main.cpp
         store.cpp
-        store.h)
+        store.h
+        LinkedList.h
+        LinkedList.cpp
+        Node.h
+        Node.cpp)

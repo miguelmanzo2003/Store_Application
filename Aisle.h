@@ -2,53 +2,43 @@
 #ifndef AISLE_H
 #define AISLE_H
 
+#include "LinkedList.h"
 #include "Item.h"
 #include "food.h"
 #include "drink.h"
+
 
 #include <string>
 using namespace std;
 
 struct Aisle {
 private:
-	string aisleName;
-	int aisleNum;
-	Item* head;
-	Item* tail;
+    string aisleName;
+    int aisleNum;
+
+    LinkedList aisleItems = LinkedList();
+
 
 public:
-	Aisle(string aisleName);
+    Aisle(string aisleName);
 
-	Aisle();
+    void deleteAisle();
 
-	~Aisle();
-
-	void pushBack(Item* Item);
-
-	//aisle methods
-	string getAisleName() const;
+//aisle methods
+    string getAisleName() const;
 
 
-	//size methods
-	int getAisleNum() const;
+//size methods
+    int getAisleNum() const;
 
-	void setAisleNum(int length);
+    void setAisleNum(int length);
 
+//print
+    void printToScreen();
 
-	//head methods
-	Item* getHead() const;
+    LinkedList& getList();
 
-	void setHead(Item* head);
-
-	//tail methods
-	Item* getTail() const;
-
-	void setTail(Item* tail);
-
-	//print
-	void printToScreen();
-
-
+    void setAisle(LinkedList aislelItems);
 
 
 
