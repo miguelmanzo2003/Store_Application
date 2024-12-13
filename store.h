@@ -15,41 +15,51 @@ using namespace std;
 
 struct store {
 private:
-	string storeName;
+    string storeName;
 
-	int numOfAisle;
+    int numOfAisle;
 
-	enum options {
-		 AILSE = 1, HOURS, CART, REMOVE, CHECKOUT
-	};
+    enum options {
+        AILSE = 1, HOURS, CART, REMOVE, CHECKOUT
+    };
 
-	int currentAisle = 1;
+    int currentAisle = 1;
 
-	string ListOfAisles = "AisleList.txt";
-	string ListOfItems = "itemsList.txt";
+    string ListOfAisles = "AisleList.txt";
+    string ListOfItems = "itemsList.txt";
 
-	vector<Aisle> aisleList;
-	
-	guest user = guest();
+    vector<Aisle> aisleList;
 
+    guest user = guest();
 
-	void initializeAisles();
+    Aisle produce = Aisle("Produce");
+    Aisle drinks = Aisle("Drinks");
+//produce items
+    food* apples;
+    food* banana;
+    food* carrot;
+    food* orange;
+    food* tomato;
+//drinks items
+    drink* water;
+
+    void initializeAisles();
 
 public:
 
-	store(string storeName, int NumOfAisle);
+    store(string storeName, int NumOfAisle);
 
-	int getMenuChoice();
-	
-	string getStoreName();
+    int getMenuChoice();
 
-	void printStoreHrs();
+    string getStoreName();
 
-	void enterAisleMenu();
+    void printStoreHrs();
 
-	void printAisleList();
+    void enterAisleMenu();
+
+    void printAisleList();
 
 
 };
 
-#endif 
+#endif
