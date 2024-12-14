@@ -153,6 +153,7 @@ void store::enterAisleMenu() {
     cin >> menu2Choice;
 
     string sortPreference;
+    LinkedList* temp = new LinkedList();
     cout << endl;
 
     if (menu2Choice > 5 || menu2Choice < 1) {
@@ -178,7 +179,10 @@ void store::enterAisleMenu() {
 
         case 3:
 
-            //LinkedList temp = aisleList.at(currentAisle - 1).getList();
+
+            sortAisle(aisleList.at(currentAisle - 1).getList());
+/*
+
 
             cout << "How would you like to sort the aisle?" << endl;
             cout << "Price, ID, or Alphabetically type selection to choose: ";
@@ -192,11 +196,54 @@ void store::enterAisleMenu() {
 
             if (sortPreference == "PRICE" || sortPreference == "ID") {
 
+                Node *current = aisleList.at(currentAisle - 1).getList().getHead();
+                //maybe we will put the following while inside another wile that goes until temp is same size as aisle
+                while (temp->size() != aisleList.at(currentAisle-1).getList().size()) {
+                    while (current != nullptr && current != aisleList.at(currentAisle - 1).getList().getTail()) {
 
 
+                        Node *nextNode = current->getNext();
+
+                        if (temp->size() == 0) {
+                            break;
+                        }
+
+                        //if we encounter a number that is bigger, break and update current so we push the big num before the samll
+                        if (current->getItem()->getIdNum() < nextNode->getItem()->getIdNum()) {
+                            current = nextNode;
+                            break;
+                        } else{
+                            temp->pushBack(current);
+                        }
+
+
+                    }
+
+
+                    //when we exit the loop current will be the number bigger than the head
+                    //so lets insert the number that's bigger, before the head
+                    temp->insert_before(current, temp->getHead());
+                }
+
+
+
+                //TO USE FOR CHECK TO SEE IF LIST IS NOW IN ORDER
+                */
+/*Node* currNode = temp->getHead();
+
+                cout << "hopefully works" << endl;
+                while (currNode != nullptr) {
+                    Node* nextNode = currNode->getNext();
+                    cout << currNode->getItem()->getWord() << " and " << currNode->getItem()->getIdNum()<< endl;
+                    currNode = nextNode;
+                }*//*
 
 
             }
+*/
+
+
+
 
 
             break;
@@ -234,5 +281,68 @@ void store::printAisleList(){
     currentAisle = aisleChoice;
 
 
+}
+
+
+
+void store::sortAisle(LinkedList &aisleItems) {
+    string sortPreference;
+
+
+    cout << "How would you like to sort the aisle?" << endl;
+    cout << "Price, ID, or Alphabetically? Type your selection: ";
+    cin >> sortPreference;
+
+    // ignore case
+    for (char &c : sortPreference) {
+        c = toupper(c);
+    }
+
+
+    bool sortByPrice = (sortPreference == "PRICE");
+    bool sortByID = (sortPreference == "ID");
+    bool sortByAlpha = (sortPreference == "ALPHABETICALLY");
+
+
+    if (!sortByPrice && !sortByID && !sortByAlpha) {
+        cout << "Invalid option! Returning without sorting." << endl << endl;
+        return;
+    }
+
+    // Initialize a temporary list for sorted items
+    LinkedList temp;
+
+    // Perform selection sort on the aisleItems linked list
+    Node *current = aisleItems.getHead();
+    while (current != nullptr) {
+        Node *minNode = current;
+        Node *nextNode = current->getNext();
+
+        // Find the minimum node based on the sorting criterion
+        while (nextNode != nullptr) {
+            //if the next is less than the current then update minNode to be equal to the next node
+            if ((sortByPrice && nextNode->getItem()->getItemPrice() < minNode->getItem()->getItemPrice()) || sortByAlpha && nextNode->getItem()->getWord() < minNode->getItem()->getWord()||
+                (sortByID && nextNode->getItem()->getIdNum() < minNode->getItem()->getIdNum())) {
+                minNode = nextNode;
+            }
+            nextNode = nextNode->getNext();
+        }
+
+        // switch the places of the node's
+        //if minNode != current, it is bc its been updated to a smaller value
+        if (minNode != current) {
+            //make an item = to the current item (this is like a holder so we don't lose currentItem)
+            Item *tempItem = current->getItem();
+            //set the current item to minNode's item
+            current->setItem(minNode->getItem());
+            //then set minNode = tempItem which was
+            minNode->setItem(tempItem);
+        }
+
+        // Move to the next node
+        current = current->getNext();
+    }
+
+    cout << "Aisle sorted successfully by " << (sortByPrice ? "Price" : "ID") << "!" << endl << endl;
 }
 

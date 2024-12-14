@@ -35,3 +35,8 @@ void Node::printContent(){
 Item* Node::getItem() const{
     return this->nodeItem;
 }
+
+// Setter for item
+void Node::setItem(Item* newItem) {
+    this->nodeItem = newItem;
+}

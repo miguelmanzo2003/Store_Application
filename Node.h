@@ -31,6 +31,8 @@ public:
 
     Item* getItem() const;
 
+    void setItem(Item* newItem);
+
 
 
 };
