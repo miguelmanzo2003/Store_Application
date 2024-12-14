@@ -6,6 +6,8 @@
 #include "Item.h"
 #include "food.h"
 #include "drink.h"
+#include "LinkedList.h"
+#include "Node.h"
 
 using namespace std;
 
@@ -35,7 +37,7 @@ store::store(string storeName, int numOfAisle) {
 void store::initializeAisles(){
     //this will also be replaced
 
-
+    //aisle list is a vector that contains aisles and each aisle has a linked list
     aisleList.push_back(produce);
     aisleList.push_back(drinks);
 
@@ -115,7 +117,7 @@ int store::getMenuChoice() {
 
     getMenuChoice();
 
-
+return 0;
 }
 
 string store::getStoreName() {
@@ -150,6 +152,7 @@ void store::enterAisleMenu() {
     int menu2Choice;
     cin >> menu2Choice;
 
+    string sortPreference;
     cout << endl;
 
     if (menu2Choice > 5 || menu2Choice < 1) {
@@ -174,7 +177,28 @@ void store::enterAisleMenu() {
             break;
 
         case 3:
-            cout << "coming soon" << endl;
+
+            //LinkedList temp = aisleList.at(currentAisle - 1).getList();
+
+            cout << "How would you like to sort the aisle?" << endl;
+            cout << "Price, ID, or Alphabetically type selection to choose: ";
+            cin >> sortPreference;
+
+
+            for (int i = 0; i < sortPreference.size(); i++) {
+                sortPreference.at(i) = toupper(sortPreference.at(i));
+            }
+
+
+            if (sortPreference == "PRICE" || sortPreference == "ID") {
+
+
+
+
+
+            }
+
+
             break;
 
         case 4:

@@ -20,6 +20,12 @@ public:
 
     void pushBack(Node* Item);
 
+    int size() const;
+
+    Node *  insert_before(Node* newItem, Node * knownNode);
+
+    void removeFromFront();
+
 //head methods
     Node* getHead() const;
 

@@ -57,6 +57,51 @@ void LinkedList::setTail(Node* tail) {
     this->tail = tail;
 }
 
+int LinkedList::size() const{
+    return this->listSize;
+}
+
+Node *  LinkedList::insert_before(Node* newItem, Node * knownNode){
+
+
+    Node* newNode = newItem;
+
+    if(knownNode->getPrev() == nullptr){
+        head = newNode;
+        head->setNext(knownNode);
+        knownNode->setPrev(head);
+
+        this->listSize = listSize + 1;
+
+        return newNode;
+    }
+
+    newNode->setPrev(knownNode->getPrev());
+    knownNode->getPrev()->setNext(newNode);
+    newNode->setNext(knownNode);
+    knownNode->setPrev( newNode);
+
+    this->listSize = listSize + 1;
+
+    return newNode;
+}
+
+
+void LinkedList::removeFromFront(){
+
+
+    if(this->head != nullptr && this->head->getNext() != nullptr){
+        this->head = this->head->getNext();
+        this->head->setPrev(nullptr);
+        this->listSize = listSize - 1;
+    }else if(this->head != nullptr && this->head->getNext() == nullptr){
+        this->head = nullptr;
+        this->listSize = 0;
+    }
+}
+
+
+
 
 
 
