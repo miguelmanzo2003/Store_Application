@@ -153,7 +153,7 @@ void store::enterAisleMenu() {
     cin >> menu2Choice;
 
     string sortPreference;
-    LinkedList* temp = new LinkedList();
+
     cout << endl;
 
     if (menu2Choice > 5 || menu2Choice < 1) {
