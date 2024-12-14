@@ -181,66 +181,7 @@ void store::enterAisleMenu() {
 
 
             sortAisle(aisleList.at(currentAisle - 1).getList());
-/*
 
-
-            cout << "How would you like to sort the aisle?" << endl;
-            cout << "Price, ID, or Alphabetically type selection to choose: ";
-            cin >> sortPreference;
-
-
-            for (int i = 0; i < sortPreference.size(); i++) {
-                sortPreference.at(i) = toupper(sortPreference.at(i));
-            }
-
-
-            if (sortPreference == "PRICE" || sortPreference == "ID") {
-
-                Node *current = aisleList.at(currentAisle - 1).getList().getHead();
-                //maybe we will put the following while inside another wile that goes until temp is same size as aisle
-                while (temp->size() != aisleList.at(currentAisle-1).getList().size()) {
-                    while (current != nullptr && current != aisleList.at(currentAisle - 1).getList().getTail()) {
-
-
-                        Node *nextNode = current->getNext();
-
-                        if (temp->size() == 0) {
-                            break;
-                        }
-
-                        //if we encounter a number that is bigger, break and update current so we push the big num before the samll
-                        if (current->getItem()->getIdNum() < nextNode->getItem()->getIdNum()) {
-                            current = nextNode;
-                            break;
-                        } else{
-                            temp->pushBack(current);
-                        }
-
-
-                    }
-
-
-                    //when we exit the loop current will be the number bigger than the head
-                    //so lets insert the number that's bigger, before the head
-                    temp->insert_before(current, temp->getHead());
-                }
-
-
-
-                //TO USE FOR CHECK TO SEE IF LIST IS NOW IN ORDER
-                */
-/*Node* currNode = temp->getHead();
-
-                cout << "hopefully works" << endl;
-                while (currNode != nullptr) {
-                    Node* nextNode = currNode->getNext();
-                    cout << currNode->getItem()->getWord() << " and " << currNode->getItem()->getIdNum()<< endl;
-                    currNode = nextNode;
-                }*//*
-
-
-            }
-*/
 
 
 
